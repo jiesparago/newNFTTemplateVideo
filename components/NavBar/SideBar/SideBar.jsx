@@ -72,7 +72,6 @@ const SideBar = ({setOpenSideMenu}) => {
   ];
 
   const openDiscoverMenu = () =>{
-    console.log("hello world")
     if (!openDiscover){
         setOpenDiscover(true);
     }else{
