@@ -22,12 +22,32 @@ const Footer = () => {
             <a href="#"><TiSocialFacebook/></a>
             <a href="#"><TiSocialLinkedin/></a>
             <a href="#"><TiSocialTwitter/></a>
+            <a href="#"><TiSocialYoutube/></a>
             <a href="#"><TiSocialInstagram/></a>
+          </div>
+        </div>
+        <div className={Style.footer_box_discover}>
+          <h3>Discover</h3>
+          <Discover/>
+        </div>
+        <div className={Style.footer_box_help}>
+          <h3>Help Center</h3>
+          <HelpCenter/>
+        </div>
+        <div className={Style.subscribe}>
+          <h3>Subscribe</h3>
+        
+          <div className={Style.subscribe_box}>
+            <input type="email" placeholder="Enter your email *" />
+            <RiSendPlaneFill className={Style.subscribe_box_send}/>
+          </div>
+          <div className={Style.subscribe_box_info}>
+            <p>Discover, collect and sell extraordinary NFTs Opensea is the first and largest NFT marketplace</p>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Footer
