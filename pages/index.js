@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+
+//Internal Import
+import Style from '../styles/index.module.css';
+import { HeroSection } from '../components/componentsindex'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className={Style.homePage}>
+      <HeroSection/>
+    </div>
   )
 }
 
