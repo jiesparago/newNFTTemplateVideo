@@ -10,13 +10,12 @@ import { TbArrowBigLeftLines, TbArrowBigRightLine } from 'react-icons/tb';
 import Style from "./BigNFTSlider.module.css";
 import images from '../../img';
 import Button from '../Button/Button';
-import { IMAGES_MANIFEST } from 'next/dist/shared/lib/constants';
-import { IncrementalCache } from 'next/dist/server/lib/incremental-cache';
+
 
 
 const BigNFTSlider = () => {
 
-    const [idNumber, setIdNumber] = useState(1);
+    const [idNumber, setIdNumber] = useState(0);
 
     const sliderData = [
         {
@@ -29,58 +28,58 @@ const BigNFTSlider = () => {
             image: images.user1,
             nftImage: images.nft_image_1,
             time:{
-                days: 27,
-                hours: 10,
-                minutes: 11,
-                seconds: 35
+                days: 21,
+                hours: 40,
+                minutes: 81,
+                seconds: 15,
             }
         },
         {
             title: "GM NFT",
             id: 2,
-            name: "Sef",
+            name: "Seffy",
             collection: "AM",
             price: "00000064664 ETH",
             like: 243,
             image: images.user2,
             nftImage: images.nft_image_2,
             time:{
-                days: 27,
-                hours: 10,
-                minutes: 11,
-                seconds: 35
+                days: 77,
+                hours: 11,
+                minutes: 21,
+                seconds: 45,
             }
         },
         {
             title: "Buddy NFT",
             id: 3,
-            name: "Sef",
+            name: "Seffchon",
             collection: "BM",
             price: "00000064664 ETH",
             like: 243,
             image: images.user3,
             nftImage: images.nft_image_3,
             time:{
-                days: 27,
-                hours: 10,
+                days: 37,
+                hours: 20,
                 minutes: 11,
-                seconds: 35
+                seconds: 55,
             }
         },
         {
             title: "PM NFT",
             id: 4,
-            name: "Sef",
+            name: "Seffpan",
             collection: "CM",
             price: "00000064664 ETH",
             like: 243,
             image: images.user4,
-            nftImage: images.nft_image_4,
+            nftImage: images.nft_image_1,
             time:{
-                days: 27,
-                hours: 10,
-                minutes: 11,
-                seconds: 35
+                days: 87,
+                hours: 29,
+                minutes: 10,
+                seconds: 15,
             }
         },
 
@@ -88,14 +87,14 @@ const BigNFTSlider = () => {
     //--Inc
     const inc = useCallback(() => {
         if(idNumber + 1 < sliderData.length){
-            setIdNumber(setIdNumber + 1);
+            setIdNumber(idNumber + 1);
         }
     }, [idNumber, sliderData.length]);
     
     //--Dec
     const dec = useCallback(() => {
         if(idNumber > 0){
-            setIdNumber(setIdNumber - 1);
+            setIdNumber(idNumber - 1);
         }
     }, [idNumber]);
 
@@ -112,7 +111,7 @@ const BigNFTSlider = () => {
                     <div className={Style.bigNFTSlider_box_left_creator_profile}>
                         <Image className={Style.bigNFTSlider_box_left_creator_profile_img} src={sliderData[idNumber].image} alt="profile image" width={50} height={50}/>
                         
-                        <div className={Style.bigNFTSlider_box_left_creator_profile_img}>
+                        <div className={Style.bigNFTSlider_box_left_creator_profile_info}>
                             <p>Creator</p>
                             <h4>{sliderData[idNumber].name}{" "}
                             <span>
@@ -181,7 +180,7 @@ const BigNFTSlider = () => {
 
             <div className={Style.bigNFTSlider_box_right}>
                 <div className={Style.bigNFTSlider_box_right_box}>
-                    <Image src={sliderData[idNumber].nftImage} alt="NFT Image"/>
+                    <Image src={sliderData[idNumber].nftImage} alt="NFT Image" className={Style.bigNFTSlider_box_right_box_img}/>
 
                     <div className={Style.bigNFTSlider_box_right_box_like}>
                         <AiFillHeart/>
